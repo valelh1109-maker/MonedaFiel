@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moneda Fiel - Cuenta</title>
+    <link rel="stylesheet" href="cuenta.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <img src="imagenes/cuadricula.png" alt="cuadritos" class="icon-cuadros">
+        </div>
+
+        <div class="header-center">
+            <h1 class="titulo">m o n e d a &nbsp; f i e l</h1>
+            <p class="subtitulo">¡Haz que tus ganancias lleguen al cielo!</p>
+        </div>
+
+        <div class="header-right">
+            <img src="imagenes/angelito.jpeg" class="icon-angelito" alt="angelito">
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="cuenta-contenido">
+
+        <!-- Overlay del menú -->
+        <div class="menu-overlay">
+            <div class="menu-header">
+                <span>MENÚ</span>
+                <img src="imagenes/x.png" class="btn-cerrar" alt="cerrar">
+            </div>
+
+            <nav class="menu">
+                <!-- 0: INICIO -->
+                <div class="menu-item">
+                    <img src="imagenes/cuadricula.png" class="icono" alt="inicio">
+                    <span>Inicio</span>
+                </div>
+
+                <!-- 1: CALCULADORA -->
+                <div class="menu-item">
+                    <img src="imagenes/money-cheque-editar.png" class="icono" alt="calculadora">
+                    <span>Calculadora</span>
+                </div>
+
+                <!-- 2: CONSEJOS -->
+                <div class="menu-item">
+                    <img src="imagenes/bulbo.png" class="icono" alt="consejos">
+                    <span>Consejos</span>
+                </div>
+
+                <!-- 3: CUENTA -->
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="cuenta">
+                    <span>Cuenta</span>
+                </div>
+
+                <!-- 4: AYUDA -->
+                <div class="menu-item">
+                    <img src="imagenes/interrogatorio.png" class="icono" alt="ayuda">
+                    <span>Ayuda</span>
+                </div>
+
+                <!-- 5: CONTÁCTANOS -->
+                <div class="menu-item">
+                    <img src="imagenes/sobre.png" class="icono" alt="contacto">
+                    <span>Contáctanos</span>
+                </div>
+
+                <!-- 6: REGISTRO -->
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="registro">
+                    <span>Registro</span>
+                </div>
+            </nav>
+        </div>
+
+        <h2 class="titulo-cuenta">Cuenta</h2>
+
+        <div class="tarjeta-cuenta">
+
+            <img src="imagenes/usuario (1).png" class="icon-user" alt="usuario">
+
+            <div class="campo" data-field="nombre">
+                <p class="label">Nombre</p>
+                <p class="valor">María Pérez Méndez</p>
+                <img src="imagenes/lapiz.png" class="icon-edit" alt="editar">
+            </div>
+
+            <div class="campo" data-field="usuario">
+                <p class="label">Usuario</p>
+                <p class="valor">Mari10032005</p>
+                <img src="imagenes/lapiz.png" class="icon-edit" alt="editar">
+            </div>
+
+            <div class="campo" data-field="correo">
+                <p class="label">Correo</p>
+                <p class="valor">Mari10032005@gmail.com</p>
+                <img src="imagenes/lapiz.png" class="icon-edit" alt="editar">
+            </div>
+
+            <div class="campo" data-field="contrasena">
+                <p class="label">Contraseña</p>
+                <p class="valor">*********</p>
+
+
+            </div>
+
+            <div class="acciones">
+                <!-- Botón GUARDAR -->
+                <button type="button" id="btn-guardar" class="btn-guardar">
+                    <img src="imagenes/disco.png" class="icon-guardar" alt="guardar">
+                    Guardar cambios
+                </button>
+
+                <a href="inicio.html">
+                    <button type="button" class="btn-cerrar-sesion">Cerrar sesión</button>
+                </a>
+            </div>
+
+        </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const campos = document.querySelectorAll('.campo');
+                const iconosEditar = document.querySelectorAll('.icon-edit');
+                const btnGuardar = document.getElementById('btn-guardar');
+                const btnCerrarSesion = document.querySelector('.btn-cerrar-sesion');
+
+                // Leer usuario logueado desde localStorage
+                let usuarioSesion = null;
+                const usuarioLogStr = localStorage.getItem('usuarioLogueado');
+                if (usuarioLogStr) {
+                    try {
+                        usuarioSesion = JSON.parse(usuarioLogStr);
+                    } catch (e) {
+                        console.error("Error parseando usuarioLogueado:", e);
+                    }
+                }
+
+                // Cerrar sesión: borrar localStorage
+                if (btnCerrarSesion) {
+                    btnCerrarSesion.addEventListener('click', () => {
+                        localStorage.removeItem('usuarioLogueado');
+                    });
+                }
+                // Si NO hay usuario logueado → campos vacíos, sin lápiz, sin guardar, sin botón cerrar sesión
+                if (!usuarioSesion || !usuarioSesion.usuario) {
+                    campos.forEach(campo => {
+                        const valorP = campo.querySelector('.valor');
+                        if (valorP) {
+                            valorP.textContent = '—';
+                        }
+                    });
+
+                    iconosEditar.forEach(icono => {
+                        icono.style.display = 'none';
+                    });
+
+                    // OCULTAR botón cerrar sesión
+                    if (btnCerrarSesion) {
+                        btnCerrarSesion.style.display = 'none';
+                    }
+
+                    if (btnGuardar) {
+                        // Cambiar texto
+                        btnGuardar.textContent = 'Inicia sesión para editar tus datos';
+
+                        // Estilo visual como "no editable" pero clickable
+                        btnGuardar.style.opacity = "0.8";
+                        btnGuardar.style.backgroundColor = "#888";
+                        btnGuardar.style.cursor = "pointer";
+
+                        // Asegurar que SÍ reciba clics
+                        btnGuardar.style.pointerEvents = "auto";
+
+                        // Función del botón → IR AL LOGIN
+                        btnGuardar.addEventListener("click", () => {
+                            window.location.href = "inicio.html";
+                        });
+                    }
+
+
+                    return; // no seguir cargando datos
+                }
+
+
+                // Si SÍ hay usuario logueado → traer datos desde el servidor
+                fetch(`/usuario?usuario=${encodeURIComponent(usuarioSesion.usuario)}`)
+                    .then(r => r.json())
+                    .then(data => {
+                        if (!data.ok) {
+                            console.error("Error obteniendo datos de usuario:", data.mensaje);
+
+                            // Dejar los campos vacíos y deshabilitamos edición
+                            campos.forEach(campo => {
+                                const valorP = campo.querySelector('.valor');
+                                if (valorP) {
+                                    valorP.textContent = '—';
+                                }
+                            });
+
+                            iconosEditar.forEach(icono => {
+                                icono.style.display = 'none';
+                            });
+
+                            if (btnGuardar) {
+                                btnGuardar.disabled = true;
+                                btnGuardar.textContent = 'No se pudieron cargar tus datos';
+                            }
+
+                            return;
+                        }
+
+                        // Rellenar la tarjeta con los datos del usuario
+                        campos.forEach(campo => {
+                            const field = campo.dataset.field;
+                            const valorP = campo.querySelector('.valor');
+                            if (!field || !valorP) return;
+
+                            if (field === 'nombre') valorP.textContent = data.nombre || '—';
+                            if (field === 'usuario') valorP.textContent = data.usuario || '—';
+                            if (field === 'correo') valorP.textContent = data.correo || '—';
+                            if (field === 'contrasena') valorP.textContent = '*********';
+                        });
+
+                        let usuarioOriginal = data.usuario; // para actualizar en CSV
+
+                        // Hacer editable nombre/usuario/correo con el lápiz
+                        iconosEditar.forEach(icono => {
+                            icono.addEventListener('click', () => {
+                                const campo = icono.closest('.campo');
+                                const field = campo.dataset.field;
+                                const valorP = campo.querySelector('.valor');
+
+                                if (!campo || !valorP || !field) return;
+
+                                // Asegura que la contraseña NO se edite
+                                if (field === 'contrasena') return;
+
+                                if (campo.classList.contains('editando')) return;
+                                campo.classList.add('editando');
+
+                                const input = document.createElement('input');
+                                input.type = 'text';
+                                input.className = 'input-editar';
+                                input.value = (valorP.textContent.trim() === '—') ? '' : valorP.textContent.trim();
+
+                                campo.replaceChild(input, valorP);
+                                input.focus();
+                            });
+                        });
+
+                        // Guardar cambios → actualizar CSV en el servidor
+                        if (btnGuardar) {
+                            btnGuardar.addEventListener('click', async () => {
+                                let nombreNuevo = '';
+                                let usuarioNuevo = '';
+                                let correoNuevo = '';
+
+                                // Tomar valores de los inputs  o del texto
+                                campos.forEach(campo => {
+                                    const field = campo.dataset.field;
+                                    if (!field || field === 'contrasena') return;
+
+                                    const input = campo.querySelector('.input-editar');
+                                    let valor = '';
+
+                                    if (input) {
+                                        valor = input.value.trim();
+                                    } else {
+                                        const p = campo.querySelector('.valor');
+                                        if (p) valor = p.textContent.trim();
+                                    }
+
+                                    if (field === 'nombre') nombreNuevo = valor;
+                                    if (field === 'usuario') usuarioNuevo = valor;
+                                    if (field === 'correo') correoNuevo = valor;
+                                });
+
+                                try {
+                                    const resp = await fetch('/actualizar-usuario', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({
+                                            usuarioOriginal,
+                                            nombre: nombreNuevo,
+                                            correo: correoNuevo,
+                                            usuarioNuevo
+                                        })
+                                    });
+
+                                    const resJson = await resp.json();
+
+                                    if (!resJson.ok) {
+                                        alert(resJson.mensaje || 'No se pudo actualizar la cuenta.');
+                                        return;
+                                    }
+
+                                    // Volver a convertir inputs en <p> con los nuevos valores
+                                    campos.forEach(campo => {
+                                        const field = campo.dataset.field;
+                                        const input = campo.querySelector('.input-editar');
+
+                                        if (input) {
+                                            const nuevoP = document.createElement('p');
+                                            nuevoP.className = 'valor';
+
+                                            let val = input.value.trim() || '—';
+                                            if (field === 'contrasena') {
+                                                val = '*********';
+                                            }
+
+                                            nuevoP.textContent = val;
+                                            campo.replaceChild(nuevoP, input);
+                                            campo.classList.remove('editando');
+                                        }
+                                    });
+
+                                    // Actualizar el usuarioOriginal por si cambió el nombre de usuario
+                                    usuarioOriginal = usuarioNuevo || usuarioOriginal;
+
+                                    // Actualizar la info en localStorage
+                                    localStorage.setItem('usuarioLogueado', JSON.stringify({
+                                        nombre: nombreNuevo || data.nombre,
+                                        usuario: usuarioOriginal,
+                                        correo: correoNuevo || data.correo
+                                    }));
+
+                                    alert('Datos actualizados correctamente');
+                                } catch (err) {
+                                    console.error(err);
+                                    alert('Error de comunicación con el servidor');
+                                }
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Error en fetch /usuario:", err);
+                    });
+            });
+        </script>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/profile.php?id=61584247917606"><img src="imagenes/facebook.png"
+                    class="icon-footer"></a>
+            <a
+                href="https://www.instagram.com/moneda_fiel_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="imagenes/instagram.png" class="icon-footer"> </a>
+
+            <a href="https://www.youtube.com/channel/UC5Feesfp6oDEQ9BPRpJaBhg"><img src="imagenes/youtube.png"
+                    class="icon-footer"></a>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=infomonedafiel@gmail.com">
+                <img src="imagenes/gmail.png" class="icon-footer"></a>
+        </div>
+
+        <p class="copy">Copyright © 2025 Moneda Fiel. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="menu.js"></script>
+
+</body>
+
+</html>

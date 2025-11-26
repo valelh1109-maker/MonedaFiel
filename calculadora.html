@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moneda Fiel</title>
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <img src="imagenes/cuadricula.png" alt="cuadritos" class="icon-cuadros">
+        </div>
+
+        <div class="header-center">
+            <h1 class="titulo">m o n e d a &nbsp; f i e l</h1>
+            <p class="subtitulo">¡Haz que tus ganancias lleguen al cielo!</p>
+        </div>
+
+        <div class="header-right">
+            <img src="imagenes/angelito.jpeg" class="icon-angelito" alt="angelito">
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <!-- Overlay del menú lateral -->
+        <div class="menu-overlay">
+            <div class="menu-header">
+                <span>MENÚ</span>
+                <img src="imagenes/x.png" class="btn-cerrar" alt="cerrar">
+            </div>
+
+            <nav class="menu">
+
+                <div class="menu-item">
+                    <img src="imagenes/cuadricula.png" class="icono" alt="inicio">
+                    <span>Inicio</span>
+                </div>
+
+                <!-- 1: CALCULADORA -->
+                <div class="menu-item">
+                    <img src="imagenes/money-cheque-editar.png" class="icono" alt="calculadora">
+                    <span>Calculadora</span>
+                </div>
+
+                <!-- 2: CONSEJOS -->
+                <div class="menu-item">
+                    <img src="imagenes/bulbo.png" class="icono" alt="consejos">
+                    <span>Consejos</span>
+                </div>
+
+                <!-- 3: CUENTA -->
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="cuenta">
+                    <span>Cuenta</span>
+                </div>
+
+                <!-- 4: AYUDA -->
+                <div class="menu-item">
+                    <img src="imagenes/interrogatorio.png" class="icono" alt="ayuda">
+                    <span>Ayuda</span>
+                </div>
+
+                <!-- 5: CONTÁCTANOS -->
+                <div class="menu-item">
+                    <img src="imagenes/sobre.png" class="icono" alt="contacto">
+                    <span>Contáctanos</span>
+                </div>
+
+                <!-- 6: REGISTRO -->
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="registro">
+                    <span>Registro</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- === PARTE CENTRAL: Calculadora (HTML) === -->
+        <div class="contenedor-calculadora">
+
+            <h2 class="titulo-seccion">Calculadora</h2>
+            <div class="input-producto">
+                <label>Nombre del producto</label>
+                <input type="text" id="nombreProducto" placeholder="Ej: Empanada de pollo">
+            </div>
+
+            <div class="input-ingredientes">
+                <label>Ingrese la cantidad de ingredientes</label>
+                <input type="number" id="cantidadIngredientes" min="1" value="3">
+                <button id="btnGenerar" class="primario">OK</button>
+
+            </div>
+
+            <h3 class="subtitulo-sección">Materia prima</h3>
+
+            <div id="contenedorIngredientes" class="grid-ingredientes"></div>
+
+            <div class="fila-bloques">
+                <div class="tarjeta costos-adicionales">
+                    <h4>Costos adicionales (mensuales)</h4>
+
+                    <label>Mano de obra</label>
+                    <input type="number" id="c_mano" min="0" value="0">
+
+                    <label>Transporte</label>
+                    <input type="number" id="c_trans" min="0" value="0">
+
+                    <label>Servicios</label>
+                    <input type="number" id="c_serv" min="0" value="0">
+
+                    <label>Otros</label>
+                    <input type="number" id="c_otros" min="0" value="0">
+
+                    <p class="nota">Nota: los costos mensuales se reparten entre 30 unidades (día estándar).</p>
+                    <p><strong>Unidades producidas por mes (entre todos los productos que vende):</strong></p>
+                    <input type="number" id="produccionMensual" min="1" value="30">
+                </div>
+
+                <div class="tarjeta resultados">
+                    <h4>Resultado</h4>
+
+                    <p><strong>Costo total por unidad:</strong> <span id="totalUnidad">—</span></p>
+                    <p><strong>Precio sugerido (margen 60%):</strong> <span id="precioSugerido">—</span></p>
+
+                    <h4>Desglose</h4>
+                    <p>Ingredientes (subtotal): <span id="subtotalIngr">—</span></p>
+                    <p>Costos adicionales por unidad: <span id="costosAdUnit">—</span></p>
+                    <p>Costo subfinal: <span id="costoSubfinal">—</span></p>
+                    <p>Respaldo (10%): <span id="respaldo">—</span></p>
+
+                    <h4>Explicación del cálculo</h4>
+                    <ul id="explicacionCalc">
+                        <!-- Se llena dinámicamente -->
+                    </ul>
+                </div>
+
+                <div class="tarjeta advertencias">
+                    <h4>Advertencias</h4>
+                    <div id="contenedorAdvertencias">—</div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/profile.php?id=61584247917606"><img src="imagenes/facebook.png"
+                    class="icon-footer"></a>
+            <a
+                href="https://www.instagram.com/moneda_fiel_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="imagenes/instagram.png" class="icon-footer"> </a>
+
+            <a href="https://www.youtube.com/channel/UC5Feesfp6oDEQ9BPRpJaBhg"><img src="imagenes/youtube.png"
+                    class="icon-footer"></a>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=infomonedafiel@gmail.com">
+                <img src="imagenes/gmail.png" class="icon-footer"></a>
+        </div>
+
+        <p class="copy">Copyright © 2025 Moneda Fiel. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- LÓGICA DE LA CALCULADORA -->
+    <script src="app.js"></script>
+    <script src="menu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+/* ---------------- ESTILOS NORMALES (ESCRITORIO) ---------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins ExtraBold", sans-serif;
+    background-color: #F1FDF3;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+.left-section {
+    text-align: center;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 800;
+    color: #99CDA9;
+    margin-bottom: 20px;
+    text-shadow:
+        0px 3px 3px rgba(0, 0, 0, 0.2),
+        0px 6px 10px rgba(0, 0, 0, 0.15),
+        0px 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.right-section {
+    width: 320px;
+
+}
+
+.login-title {
+    text-align: center;
+    font-size: 28px;
+    color: #99CDA9;
+    margin-bottom: 50px;
+    font-weight: 795;
+}
+
+
+label {
+    display: block;
+    color: #99CDA9;
+    font-size: 18px;
+    font-weight: 795;
+    margin-bottom: 5px;
+    margin-top: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #6f8693;
+    opacity: 0.8;
+    border-radius: 0px;
+    font-size: 16px;
+    color: white;
+    outline: none;
+}
+
+.btn {
+    margin-left: 40%;
+    padding: 10px 45px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #9BB4C0;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #87aeb3;
+}
+
+.register-text {
+    text-align: center;
+    font-size: 18px;
+    color: #99CDA9;
+    margin-top: 15px;
+    margin-left: 30px;
+    font-weight: 600;
+}
+
+.register-text2 a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #96A78D;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 30px
+}
+
+
+
+
+
+/* ---------------------------------------------------------------
+------------------------   RESPONSIVE   ---------------------------
+--------------------------------------------------------------- */
+
+/* TABLETS – ancho menor 1024 */
+@media (max-width: 1024px) {
+    .container {
+        gap: 60px;
+    }
+}
+
+/* CELULARES – menos de 768 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        height: auto;
+        gap: 40px;
+    }
+
+    .right-section {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    label {
+        text-align: left;
+    }
+
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* CELULARES PEQUEÑOS – menos de 480 */
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+}

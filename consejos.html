@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moneda Fiel</title>
+    <link rel="stylesheet" href="consejos.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <img src="imagenes/cuadricula.png" alt="cuadritos" class="icon-cuadros">
+        </div>
+
+        <div class="header-center">
+            <h1 class="titulo">m o n e d a &nbsp; f i e l</h1>
+            <p class="subtitulo">¡Haz que tus ganancias lleguen al cielo!</p>
+        </div>
+
+        <div class="header-right">
+            <img src="imagenes/angelito.jpeg" class="icon-angelito" alt="angelito">
+        </div>
+    </header>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Busca un tutorial">
+        </div>
+        <img src="imagenes/busqueda.png" alt="buscar" class="search-icon">
+    </div>
+
+    <!-- CONTENIDO -->
+    <main class="contenido">
+
+        <!-- Overlay del menú -->
+        <div class="menu-overlay">
+            <div class="menu-header">
+                <span>MENÚ</span>
+                <img src="imagenes/x.png" class="btn-cerrar" alt="cerrar">
+            </div>
+
+            <nav class="menu">
+                <div class="menu-item">
+                    <img src="imagenes/cuadricula.png" class="icono" alt="inicio">
+                    <span>Inicio</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/money-cheque-editar.png" class="icono" alt="calculadora">
+                    <span>Calculadora</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/bulbo.png" class="icono" alt="consejos">
+                    <span>Consejos</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="cuenta">
+                    <span>Cuenta</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/interrogatorio.png" class="icono" alt="ayuda">
+                    <span>Ayuda</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/sobre.png" class="icono" alt="contacto">
+                    <span>Contáctanos</span>
+                </div>
+
+                <div class="menu-item">
+                    <img src="imagenes/usuario (1).png" class="icono" alt="registro">
+                    <span>Registro</span>
+                </div>
+            </nav>
+        </div>
+
+        <h2 class="titulo-seccion">Consejos</h2>
+
+        <section class="tip">
+            <h3 class="tip-titulo" id="tip-titulo">Tip del día</h3>
+            <p class="tip-txt" id="tip-texto">
+                Compra inteligentemente. <br><br>
+                Compara proveedores, negocia descuentos y compra solo lo necesario para no perder inventario...
+            </p>
+        </section>
+
+        <h3 class="subtitulo-video"></h3>
+        <!-- Aquí el JS va a inyectar los h3.subtitulo-video y div.video-container -->
+        <div id="videos-resultados"></div>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/profile.php?id=61584247917606"><img src="imagenes/facebook.png"
+                    class="icon-footer"></a>
+            <a
+                href="https://www.instagram.com/moneda_fiel_oficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <img src="imagenes/instagram.png" class="icon-footer"> </a>
+
+            <a href="https://www.youtube.com/channel/UC5Feesfp6oDEQ9BPRpJaBhg"><img src="imagenes/youtube.png"
+                    class="icon-footer"></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=infomonedafiel@gmail.com">
+                <img src="imagenes/gmail.png" class="icon-footer"></a>
+        </div>
+
+        <p class="copy">Copyright © 2025 Moneda Fiel. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // ==========================
+        //  DATOS DE LOS VIDEOS
+        // ==========================
+        const VIDEOS = [
+            // ==========================
+            //  TEMA: REGISTRO (2 videos)
+            // ==========================
+            {
+                titulo: "¿Cómo registrarse en Moneda Fiel?",
+                descripcion: "Aprende a crear tu cuenta paso a paso.",
+                url: "https://www.youtube.com/embed/N373miVPX3c",
+                palabrasClave: ["registro", "registrarse", "cuenta", "crear cuenta", "inicio de sesión"],
+                porDefecto: true   // uno de los 2 que salen sin buscar
+            },
+            {
+                titulo: "Errores comunes al registrarse",
+                descripcion: "Evita los errores más frecuentes al crear tu cuenta en Moneda Fiel.",
+                url: "https://www.youtube.com/embed/kXYiU_JCYtU",
+                palabrasClave: ["registro", "registrarse", "errores", "crear cuenta", "inicio de sesión"],
+                porDefecto: false
+            },
+
+            // ==========================
+            //  TEMA: CALCULADORA (2 videos)
+            // ==========================
+            {
+                titulo: "¿Cómo usar la calculadora de Moneda Fiel?",
+                descripcion: "Te mostramos cómo usar la calculadora para tus finanzas.",
+                url: "https://www.youtube.com/embed/QLdZd1X5jKQ",
+                palabrasClave: ["calculadora", "ganancias", "costos", "utilidad", "moneda fiel"],
+                porDefecto: true   // el otro que sale sin buscar
+            },
+            {
+                titulo: "Ejemplos prácticos con la calculadora",
+                descripcion: "Casos reales para entender mejor cómo aprovechar la calculadora.",
+                url: "https://www.youtube.com/embed/eVTXPUF4Oz4",
+                palabrasClave: ["calculadora", "ejemplos", "ganancias", "costos", "utilidad"],
+                porDefecto: false
+            },
+
+            // ==========================
+            //  TEMA: PRECIOS (2 videos)
+            // ==========================
+            {
+                titulo: "Cómo subir precios de venta",
+                descripcion: "Aprende a fijar precios que te den utilidad sin espantar clientes.",
+                url: "https://www.youtube.com/embed/5m-qPE_3O5A",
+                palabrasClave: ["precios", "fijar precios", "venta", "utilidad", "ganancia", "costos"],
+                porDefecto: false
+            },
+            {
+                titulo: "Errores comunes al fijar precios",
+                descripcion: "Los errores más frecuentes al definir precios y cómo evitarlos.",
+                url: "https://www.youtube.com/embed/7kkklmRBErU",
+                palabrasClave: ["precios", "errores", "fijar precios", "ganancia",],
+                porDefecto: false
+            },
+
+            // ==========================
+            //  TEMA: INVENTARIO (2 videos)
+            // ==========================
+            {
+                titulo: "Consejos para administrar tu inventario",
+                descripcion: "Evita pérdidas por inventario mal manejado.",
+                url: "https://www.youtube.com/embed/s_GBs0V4cR0",
+                palabrasClave: ["inventario", "compras", "proveedores", "administrar", "negocio"],
+                porDefecto: false
+            },
+            {
+                titulo: "Estrategias para el control de inventarios",
+                descripcion: "Planifica tus compras para no quedarte sin productos..",
+                url: "https://www.youtube.com/embed/TCg93qbTIiE",
+                palabrasClave: ["inventario", "compras", "proveedores", "faltante", "stock"],
+                porDefecto: false
+            },
+
+            // ==========================
+            //  TEMA: DINERO / FINANZAS (2 videos)
+            // ==========================
+            {
+                titulo: "Errores comunes al manejar el dinero del negocio",
+                descripcion: "Evita los errores más frecuentes al administrar tus ingresos.",
+                url: "https://www.youtube.com/embed/Ot96OofjFew",
+                palabrasClave: ["errores", "dinero", "finanzas", "negocio", "administrar"],
+                porDefecto: false
+            },
+            {
+                titulo: "Cómo separar el dinero del negocio y el personal",
+                descripcion: "Aprende a organizar tu dinero para saber cuánto gana realmente tu negocio.",
+                url: "https://www.youtube.com/embed/VZyIY9bdNG4?start=55",
+                palabrasClave: ["dinero", "finanzas", "separar dinero", "negocio", "gastos personales"],
+                porDefecto: false
+            }
+        ];
+
+        const inputBusqueda = document.getElementById("search-input");
+        const iconoBusqueda = document.querySelector(".search-icon");
+        const contenedorVideos = document.getElementById("videos-resultados");
+
+        // ==========================
+        //  RENDERIZADO DE VIDEOS
+        // ==========================
+        function renderizarVideos(lista) {
+            if (!contenedorVideos) return;
+
+            if (!lista.length) {
+                contenedorVideos.innerHTML = `
+                <p class="tip-txt">
+                    No se encontraron videos para esa búsqueda. Intenta con otras palabras.
+                </p>
+            `;
+                return;
+            }
+
+            contenedorVideos.innerHTML = "";
+
+            lista.forEach(video => {
+
+                // <h3 class="subtitulo-video">Título</h3>
+                // <div class="video-container"><iframe ...></iframe></div>
+                const titulo = document.createElement("h3");
+                titulo.className = "subtitulo-video";
+                titulo.textContent = video.titulo;
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "video-container";
+                wrapper.innerHTML = `
+                <iframe width="560" height="400"
+                    src="${video.url}"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            `;
+
+                contenedorVideos.appendChild(titulo);
+                contenedorVideos.appendChild(wrapper);
+            });
+        }
+
+        function renderizarVideosPorDefecto() {
+            // Solo los marcados con porDefecto:true 
+            const porDefecto = VIDEOS.filter(v => v.porDefecto).slice(0, 2);
+            renderizarVideos(porDefecto);
+        }
+
+        // ==========================
+        //  BÚSQUEDA DE VIDEOS
+        // ==========================
+        function buscarVideos() {
+            const texto = (inputBusqueda?.value || "").toLowerCase().trim();
+
+            // Si no hay texto -> mostrar los 2 por defecto
+            if (!texto) {
+                renderizarVideosPorDefecto();
+                return;
+            }
+
+            let palabras = texto.split(/\s+/);
+
+            // Palabras comunes que ignora en la búsqueda
+            const STOPWORDS = [
+                "como", "cómo", "de", "del", "la", "el", "los", "las",
+                "un", "una", "unos", "unas",
+                "y", "o", "u",
+                "en", "por", "para", "con", "sin",
+                "que", "se", "a", "al"
+            ];
+
+            const palabrasFiltradas = palabras.filter(
+                p => p && !STOPWORDS.includes(p)
+            );
+
+            // Si después de filtrar no queda nada útil -> mostrar por defecto
+            if (palabrasFiltradas.length === 0) {
+                renderizarVideosPorDefecto();
+                return;
+            }
+
+            const filtrados = VIDEOS.filter(video => {
+                const textoVideo = (
+                    video.titulo + " " +
+                    video.descripcion + " " +
+                    video.palabrasClave.join(" ")
+                ).toLowerCase();
+
+                // Todas las palabras importantes deben estar en el texto del video
+                return palabrasFiltradas.every(p => {
+                    const regex = new RegExp(`\\b${p}\\b`, "i");
+                    return regex.test(textoVideo);
+                });
+            });
+
+            // Mostrar máximo 2 resultados
+            renderizarVideos(filtrados.slice(0, 2));
+        }
+
+        if (inputBusqueda) {
+            inputBusqueda.addEventListener("keyup", (e) => {
+                if (e.key === "Enter") {
+                    buscarVideos();
+                }
+            });
+        }
+
+        if (iconoBusqueda) {
+            iconoBusqueda.addEventListener("click", buscarVideos);
+        }
+
+        // ==========================
+        //  TIP DEL DÍA (POR FECHA)
+        // ==========================
+        const TIPS_DIARIOS = [
+            {
+                titulo: "Tip del día",
+                texto: "Compra inteligentemente.<br><br>Compara proveedores, negocia descuentos y compra solo lo necesario para no perder inventario."
+            },
+            {
+                titulo: "Tip del día",
+                texto: "Separa el dinero del negocio.<br><br>No mezcles tus gastos personales con los del negocio para saber realmente cuánto ganas."
+            },
+            {
+                titulo: "Tip del día",
+                texto: "Registra todo.<br><br>Anota cada venta y cada gasto. Lo que no se registra, se olvida… y se pierde."
+            },
+            {
+                titulo: "Tip del día",
+                texto: "Ponle precio a tu tiempo.<br><br>Incluye tu trabajo en los costos, así sabrás si de verdad estás ganando."
+            },
+            {
+                titulo: "Tip del día",
+                texto: "No vivas solo del efectivo.<br><br>Revisa también lo que tienes en inventario y lo que te deben tus clientes."
+            }
+        ];
+
+        const $tipTitulo = document.getElementById("tip-titulo");
+        const $tipTexto = document.getElementById("tip-texto");
+
+        function obtenerIndiceTip(fecha) {
+            const f = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
+            const msPorDia = 24 * 60 * 60 * 1000;
+            const base = new Date(2025, 0, 1); // 1 enero 2025
+            const diffDias = Math.floor((f - base) / msPorDia);
+            return ((diffDias % TIPS_DIARIOS.length) + TIPS_DIARIOS.length) % TIPS_DIARIOS.length;
+        }
+
+        function actualizarTip(fecha = new Date()) {
+            if (!$tipTitulo || !$tipTexto) return;
+
+            const indice = obtenerIndiceTip(fecha);
+            const tip = TIPS_DIARIOS[indice];
+
+            $tipTitulo.textContent = tip.titulo;
+            $tipTexto.innerHTML = tip.texto;
+        }
+
+        let diaActualString = new Date().toDateString();
+
+        function revisarCambioDeDia() {
+            const ahora = new Date();
+            const hoy = ahora.toDateString();
+
+            if (hoy !== diaActualString) {
+                diaActualString = hoy;
+                actualizarTip(ahora);
+            }
+        }
+
+        // ==========================
+        //  INICIALIZACIÓN
+        // ==========================
+        window.addEventListener("DOMContentLoaded", () => {
+            // Al entrar: mostrar  2 videos originales
+            renderizarVideosPorDefecto();
+
+            // Cargar tip según la fecha local
+            actualizarTip(new Date());
+
+            // Revisar cada minuto si cambió el día
+            setInterval(revisarCambioDeDia, 60 * 1000);
+        });
+    </script>
+
+    <script src="menu.js"></script>
+
+
+    <script src="menu.js"></script>
+
+</body>
+
+</html>
