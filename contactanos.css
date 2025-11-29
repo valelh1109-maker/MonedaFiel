@@ -481,3 +481,70 @@ main {
         width: 190px;
     }
 }
+
+/* ====== FIX HEADER EN TABLET Y CELULAR ====== */
+
+/* Tablet y celular horizontal */
+@media (max-width: 768px) {
+  .header {
+    /* En móvil usamos GRID en vez de flex */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    row-gap: 0;
+    align-items: center;
+    padding: 12px 16px;
+    height: auto; /* que crezca según el contenido */
+  }
+
+  .icon-cuadros {
+    grid-column: 1;
+    grid-row: 1 / span 2; /* ocupa alto de título + subtítulo */
+    margin-left: 0;
+    justify-self: start;
+  }
+
+  .titulo {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .subtitulo {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .icon-angelito {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    margin-right: 0;
+    justify-self: end;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Celular pequeño */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 26px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  .icon-angelito {
+    width: 70px;
+    height: 70px;
+  }
+}
