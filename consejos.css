@@ -37,8 +37,8 @@ main {
 }
 
 .icon-angelito {
-   width: 100px;
-   margin-right: 200px;
+    width: 100px;
+    margin-right: 200px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
@@ -51,7 +51,7 @@ main {
     font-weight: 900;
     letter-spacing: 5px;
     color: #99CDA9;
-     text-shadow:
+    text-shadow:
         0px 3px 3px rgba(0, 0, 0, 0.2),
         0px 6px 10px rgba(0, 0, 0, 0.15),
         0px 10px 20px rgba(0, 0, 0, 0.10);
@@ -71,8 +71,8 @@ main {
     width: 98%;
     display: flex;
     justify-content: right;
-    margin-top: 28px; 
-    padding-right: 25px; 
+    margin-top: 28px;
+    padding-right: 25px;
 }
 
 
@@ -185,7 +185,7 @@ main {
     transition: transform 0.2s ease;
 }
 
-.footer-icons :hover{
+.footer-icons :hover {
     transform: scale(1.07);
 }
 
@@ -208,9 +208,10 @@ main {
     width: 270px;
     height: 100vh;
     background-color: #D0E3D1;
-    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    display: none; /* luego se mostrará con JS */
+    display: none;
+    /* luego se mostrará con JS */
 }
 
 /* Header */
@@ -262,4 +263,186 @@ main {
     width: 26px;
     height: 26px;
     opacity: 0.2;
+}
+
+/* =========================================================
+    1024px — TABLETS GRANDES
+   ========================================================= */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 30px;
+    }
+
+    .icon-cuadros {
+        margin-left: 20px;
+    }
+
+    .icon-angelito {
+        margin-right: 80px;
+    }
+
+    .titulo {
+        font-size: 38px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+
+    .tip {
+        width: 90%;
+        height: auto;
+        padding-bottom: 25px;
+    }
+
+    .tip-txt {
+        margin-left: 30px;
+        font-size: 14px;
+    }
+
+    .subtitulo-video {
+        margin-left: 80px;
+    }
+}
+
+/* =========================================================
+   768px — TABLETS / CELULAR HORIZONTAL
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        padding: 15px;
+        flex-wrap: wrap;
+        text-align: center;
+        height: auto;
+    }
+
+    .icon-cuadros {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .titulo {
+        font-size: 32px;
+        margin-left: 0;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .icon-angelito {
+        margin-right: 0;
+        order: 3;
+        margin-top: 10px;
+    }
+
+    /* BUSCADOR */
+    .search-container {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .search-bar {
+        width: 70%;
+        margin-right: 0;
+    }
+
+    .search-icon {
+        margin-right: 20px;
+    }
+
+    /* TIP DEL DÍA */
+    .tip {
+        width: 95%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .tip-txt {
+        margin-left: 0;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    /* VIDEO */
+    .subtitulo-video {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 20px 10px;
+    }
+}
+
+/* =========================================================
+   480px — CELULAR
+   ========================================================= */
+@media (max-width: 480px) {
+
+    /* HEADER */
+    .titulo {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    /* BUSCADOR */
+    .search-bar {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    /* TIP */
+    .tip {
+        margin-bottom: 50px;
+    }
+
+    .tip-txt {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    /* VIDEO */
+    .video-container iframe {
+        height: 220px;
+    }
+
+    /* FOOTER */
+    .icon-footer {
+        width: 36px;
+    }
+
+    .copy {
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   360px — CELULAR PEQUEÑO
+   ========================================================= */
+@media (max-width: 360px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .tip-txt {
+        font-size: 13px;
+    }
+
+    .video-container iframe {
+        height: 200px;
+    }
+
+    .menu-overlay {
+        width: 200px;
+    }
 }

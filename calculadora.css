@@ -327,3 +327,237 @@ main {
   height: 26px;
   opacity: 0.2;
 }
+
+/* ===================================================
+   1024px - TABLETS GRANDES
+   =================================================== */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 30px;
+  }
+
+  .icon-cuadros {
+    margin-left: 25px;
+  }
+
+  .icon-angelito {
+    margin-right: 80px;
+  }
+
+  .titulo {
+    font-size: 38px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+  }
+
+  .contenedor-calculadora {
+    width: 94%;
+  }
+
+  .titulo-seccion {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+/* ===================================================
+   768px - TABLET / CELULAR HORIZONTAL
+   =================================================== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header {
+    padding: 15px;
+    flex-wrap: wrap;
+    height: auto;
+    text-align: center;
+  }
+
+  .icon-cuadros {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .titulo {
+    margin-left: 0;
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+
+  .subtitulo {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .icon-angelito {
+    margin-right: 0;
+    margin-top: 10px;
+    order: 3;
+  }
+
+  /* CALCULADORA */
+  .contenedor-calculadora {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .titulo-seccion {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 22px;
+  }
+
+  .input-ingredientes input {
+    width: 70px;
+  }
+
+  .input-ingredientes button,
+  .btn-csv {
+    margin-top: 8px;
+  }
+
+  .grid-ingredientes {
+    gap: 14px;
+  }
+
+  #explicacionCalc {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 40px;
+    padding: 20px 10px;
+  }
+}
+
+/* ===================================================
+   480px - CELULAR
+   =================================================== */
+@media (max-width: 480px) {
+
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-cuadros {
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .titulo {
+    font-size: 28px;
+  }
+
+  .subtitulo {
+    font-size: 15px;
+  }
+
+  /* CALCULADORA */
+  .contenedor-calculadora {
+    width: 96%;
+    margin: 15px auto;
+  }
+
+  .titulo-seccion {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 20px;
+  }
+
+  .input-ingredientes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .input-ingredientes input {
+    width: 90px;
+  }
+
+  .input-ingredientes button,
+  .btn-csv {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .tarjeta {
+    padding: 12px;
+  }
+
+  .output-line {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+
+  #explicacionCalc {
+    font-size: 13px;
+  }
+
+  /* FOOTER */
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-footer {
+    width: 36px;
+    margin: 0 8px;
+  }
+
+  .copy {
+    font-size: 11px;
+  }
+
+  /* MENÚ LATERAL */
+  .menu-overlay {
+    width: 220px;
+  }
+
+  .menu-header span {
+    margin-left: 25px;
+    font-size: 18px;
+  }
+}
+
+/* ===================================================
+   360px - CELULAR PEQUEÑO
+   =================================================== */
+@media (max-width: 360px) {
+  .titulo {
+    font-size: 24px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  .titulo-seccion {
+    font-size: 18px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 18px;
+  }
+
+  .input-ingredientes input {
+    width: 80px;
+  }
+
+  .menu-overlay {
+    width: 200px;
+  }
+}

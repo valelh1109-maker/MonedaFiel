@@ -253,3 +253,199 @@ main {
     height: 26px;
     opacity: 0.2;
 }
+
+/* =========================================================
+    1024px – TABLETS GRANDES
+   ========================================================= */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 30px;
+    }
+
+    .icon-cuadros {
+        margin-left: 25px;
+    }
+
+    .icon-angelito {
+        margin-right: 80px;
+    }
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .faq-card {
+        height: auto;
+        padding-bottom: 30px;
+    }
+}
+
+/* =========================================================
+    768px – TABLETS
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 18px;
+        text-align: center;
+    }
+
+    .icon-cuadros {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .titulo {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 32px;
+    }
+
+    .subtitulo {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .icon-angelito {
+        margin-right: 0;
+        margin-top: 12px;
+        order: 3;
+    }
+
+    /* FAQ */
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-card {
+        height: auto;
+        padding: 15px;
+    }
+
+    .faq-respuesta {
+        margin-top: 20px;
+        font-size: 15px;
+        margin-left: 0;
+    }
+
+    .soporte-titulo {
+        font-size: 22px;
+    }
+
+    .soporte-numero {
+        font-size: 15px;
+    }
+
+    .icono-phone {
+        width: 28px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 20px 10px;
+    }
+}
+
+/* =========================================================
+   480px – CELULAR
+   ========================================================= */
+@media (max-width: 480px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .titulo {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .icon-angelito {
+        width: 85px;
+        height: 85px;
+    }
+
+    /* FAQ */
+    .ayuda-titulo {
+        font-size: 24px;
+    }
+
+    .faq-subtitulo {
+        font-size: 20px;
+    }
+
+    .faq-card {
+        margin-bottom: 40px;
+        padding: 14px;
+    }
+
+    .faq-pregunta {
+        font-size: 18px;
+    }
+
+    .faq-respuesta {
+        margin-top: 16px;
+        font-size: 14px;
+    }
+
+    .soporte-titulo {
+        font-size: 20px;
+    }
+
+    .soporte-numero {
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    .icon-footer {
+        width: 36px;
+    }
+
+    .copy {
+        font-size: 11px;
+    }
+
+    /* MENÚ */
+    .menu-overlay {
+        width: 220px;
+    }
+
+    .menu-header span {
+        margin-left: 30px;
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   360px – CELULAR MUY PEQUEÑO
+   ========================================================= */
+@media (max-width: 360px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .faq-subtitulo {
+        font-size: 18px;
+    }
+
+    .faq-pregunta {
+        font-size: 16px;
+    }
+
+    .faq-respuesta {
+        font-size: 13px;
+    }
+
+    .menu-overlay {
+        width: 200px;
+    }
+}

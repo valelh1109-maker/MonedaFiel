@@ -232,7 +232,7 @@ main {
     width: 270px;
     height: 100vh;
     background-color: #D0E3D1;
-    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
     display: none;
 }
@@ -291,4 +291,238 @@ main {
     width: 26px;
     height: 26px;
     opacity: 0.2;
+}
+
+/* ===================================================
+   TABLETS (<=1024px)
+   =================================================== */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 30px;
+    }
+
+    .icon-cuadros {
+        margin-left: 30px;
+    }
+
+    .icon-angelito {
+        margin-right: 80px;
+    }
+
+    .titulo {
+        font-size: 38px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+
+    .tarjeta-cuenta {
+        width: 80%;
+        padding: 35px 40px;
+    }
+
+    .menu-overlay {
+        width: 240px;
+    }
+
+    .menu-header span {
+        margin-left: 50px;
+    }
+}
+
+/* ===================================================
+   TABLET PEQUEÑA / HORIZONTAL (<=768px)
+   =================================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 20px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .icon-cuadros {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .titulo {
+        font-size: 32px;
+        margin-left: 10px;
+    }
+
+    .subtitulo {
+        margin-left: 10px;
+        font-size: 18px;
+    }
+
+    .icon-angelito {
+        margin-right: 0;
+        order: 3;
+        margin-top: 5px;
+    }
+
+    .cuenta-contenido {
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+
+    .titulo-cuenta {
+        margin-bottom: 50px;
+        font-size: 24px;
+    }
+
+    .tarjeta-cuenta {
+        width: 90%;
+        padding: 30px 30px;
+        min-height: auto;
+    }
+
+    .acciones {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer {
+        margin-top: 40px;
+        padding: 20px 10px;
+    }
+
+    .menu-overlay {
+        width: 230px;
+    }
+
+    .menu-header span {
+        margin-left: 35px;
+        font-size: 18px;
+    }
+}
+
+/* ===================================================
+   MÓVIL (<=480px)
+   =================================================== */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .icon-cuadros {
+        align-self: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .titulo {
+        margin-left: 0;
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .subtitulo {
+        margin-left: 0;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .icon-angelito {
+        margin: 10px 0 0 0;
+    }
+
+    .cuenta-contenido {
+        margin-top: 25px;
+        padding: 0 15px;
+    }
+
+    .titulo-cuenta {
+        font-size: 22px;
+        margin-bottom: 35px;
+    }
+
+    .tarjeta-cuenta {
+        width: 100%;
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .icon-user {
+        width: 70px;
+        margin: 15px auto 35px auto;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .valor {
+        font-size: 14px;
+    }
+
+    .acciones {
+        gap: 10px;
+    }
+
+    .btn-guardar,
+    .btn-cerrar-sesion {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .icon-footer {
+        width: 36px;
+        margin: 0 8px;
+    }
+
+    .copy {
+        font-size: 11px;
+    }
+
+    .menu-overlay {
+        width: 210px;
+    }
+
+    .menu-header span {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+}
+
+/* ===================================================
+   MÓVIL MUY PEQUEÑO (<=360px)
+   =================================================== */
+@media (max-width: 360px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .titulo-cuenta {
+        font-size: 20px;
+    }
+
+    .tarjeta-cuenta {
+        padding: 18px 14px;
+    }
+
+    .btn-guardar,
+    .btn-cerrar-sesion {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+
+    .menu-overlay {
+        width: 190px;
+    }
 }

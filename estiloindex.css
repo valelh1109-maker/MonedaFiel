@@ -29,8 +29,8 @@ main::before {
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.1;
-    margin-bottom: 100px; 
-    z-index: -1; 
+    margin-bottom: 100px;
+    z-index: -1;
 }
 
 
@@ -48,8 +48,8 @@ main::before {
 }
 
 .icon-angelito {
-   width: 100px;
-   margin-right: 200px;
+    width: 100px;
+    margin-right: 200px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
@@ -62,7 +62,7 @@ main::before {
     font-weight: 900;
     letter-spacing: 5px;
     color: #99CDA9;
-     text-shadow:
+    text-shadow:
         0px 3px 3px rgba(0, 0, 0, 0.2),
         0px 6px 10px rgba(0, 0, 0, 0.15),
         0px 10px 20px rgba(0, 0, 0, 0.10);
@@ -150,7 +150,7 @@ main::before {
     transition: transform 0.2s ease;
 }
 
-.footer-icons :hover{
+.footer-icons :hover {
     transform: scale(1.07);
 }
 
@@ -173,9 +173,10 @@ main::before {
     width: 270px;
     height: 100vh;
     background-color: #D0E3D1;
-    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    display: none; /* luego se mostrará con JS */
+    display: none;
+    /* luego se mostrará con JS */
 }
 
 /* Header */
@@ -227,4 +228,210 @@ main::before {
     width: 26px;
     height: 26px;
     opacity: 0.2;
+}
+
+/* =========================================
+   RESPONSIVE: TABLET (hasta 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 25px;
+        height: auto;
+    }
+
+    .icon-cuadros {
+        margin-left: 20px;
+    }
+
+    .icon-angelito {
+        margin-right: 40px;
+    }
+
+    .titulo {
+        font-size: 38px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .descripcion {
+        padding: 0 20px;
+    }
+
+    .menu-overlay {
+        width: 240px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: TABLET PEQUEÑA / HORIZONTAL (hasta 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .icon-cuadros {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .titulo {
+        font-size: 32px;
+        margin-left: 10px;
+    }
+
+    .subtitulo {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    .icon-angelito {
+        margin-right: 0;
+        order: 3;
+        margin-top: 5px;
+    }
+
+    .bienvenido {
+        font-size: 32px;
+    }
+
+    .descripcion {
+        font-size: 15px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        max-width: 260px;
+    }
+
+    .footer {
+        padding: 18px 10px;
+    }
+
+    .menu-header span {
+        margin-left: 40px;
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MÓVIL (hasta 600px)
+   ========================================= */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .icon-cuadros {
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .titulo {
+        margin-left: 0;
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .subtitulo {
+        margin-left: 0;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .icon-angelito {
+        margin-top: 10px;
+    }
+
+    .contenido {
+        padding: 25px 15px;
+    }
+
+    .bienvenido {
+        font-size: 26px;
+    }
+
+    .descripcion {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .footer-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .icon-footer {
+        width: 36px;
+        margin: 0 8px;
+    }
+
+    .copy {
+        font-size: 11px;
+    }
+
+    .menu-overlay {
+        width: 220px;
+    }
+
+    .menu-header span {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: MÓVIL MUY PEQUEÑO (hasta 400px)
+   ========================================= */
+@media (max-width: 400px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .subtitulo {
+        font-size: 13px;
+    }
+
+    .bienvenido {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .menu-overlay {
+        width: 200px;
+    }
 }
